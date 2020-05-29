@@ -1,0 +1,10 @@
+{
+  "name": "cypress-learn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FreaKzero/cypress-learn.git",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^4.7.0"
+  }
+}
