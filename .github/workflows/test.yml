@@ -9,11 +9,10 @@ jobs:
         with:
           browser: edge
       
-      - if: always()
       - name: Generate Mochawesome Report
+      - if: always()
       - run: yarn combine-reports && yarn run generate-report
 
-      - if: always()
       - uses: actions/upload-artifact@v2
         if: always()
         with:
