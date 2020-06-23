@@ -8,11 +8,18 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: edge
+      
+      - if: always()
+      - name: Generate Mochawesome Report
+      - run: yarn combine-reports && yarn run generate-report
+
+      - if: always()
       - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: cypress-edge-report
           path: cypress/reports
+
       - uses: actions/upload-artifact@v2
         if: failure()
         with:
