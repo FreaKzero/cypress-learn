@@ -1,7 +1,7 @@
 name: Testing
 on: push
 jobs:
-  Cypress Integration Test:
+  Cypress:
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node12.16.1-chrome80-ff73
