@@ -8,6 +8,10 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: edge
+      - uses: actions/upload-artifact@v2
+        with:
+          name: cypress-edge
+          path: /cypress
 
   chrome:
     runs-on: windows-latest
@@ -16,10 +20,8 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
-  
-  artifacts:
-    steps:
       - uses: actions/upload-artifact@v2
         with:
-          name: Cypress Results
+          name: cypress-chrome
           path: /cypress
+     
