@@ -1,40 +1,25 @@
-name: Cypress Integration Test
+name: Testing
 on: push
 jobs:
-  cypress-firefox:
-    if: always()
+  Cypress Integration Test:
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node12.16.1-chrome80-ff73
       options: --user 1001
 
-    name: Testing Firefox
+    name: Testing Firefox & Chrome
     steps:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v2
-        with:
-          browser: firefox
-      
-      - name: Generate Mochawesome Report
         if: always()
-        run: yarn report:gen
-
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: cypress-report-firefox
-          path: cypress/reports
-
-  cypress-chrome:
-    if: always()
-    runs-on: ubuntu-16.04
-    name: Testing Chrome
-    steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v2
         with:
           browser: chrome
       
+      - uses: cypress-io/github-action@v2
+        if: always()
+        with:
+          browser: firefox
+
       - name: Generate Mochawesome Report
         if: always()
         run: yarn report:gen
@@ -42,5 +27,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         if: always()
         with:
-          name: cypress-report-chrome
+          name: cypress-report
           path: cypress/reports
