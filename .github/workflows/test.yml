@@ -8,8 +8,8 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: edge
-          continue-on-error: spec
       - uses: actions/upload-artifact@v2
+        if: failure()
         with:
           name: cypress-edge
           path: /cypress
@@ -21,8 +21,8 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
-          continue-on-error: spec
       - uses: actions/upload-artifact@v2
+        if: failure()
         with:
           name: cypress-chrome
           path: /cypress
