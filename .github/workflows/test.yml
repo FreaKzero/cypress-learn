@@ -9,21 +9,12 @@ jobs:
         with:
           browser: edge
       - uses: actions/upload-artifact@v2
-        if: failure()
+        if: always()
         with:
-          name: cypress-edge
-          path: /cypress
-
-  chrome:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
+          name: cypress-edge-report
+          path: cypress/reports
       - uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: cypress-chrome
-          path: /cypress
-     
+          name: cypress-edge-videos
+          path: cypress/videos
