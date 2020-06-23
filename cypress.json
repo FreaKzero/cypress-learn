@@ -1,9 +1,11 @@
 {
     "reporter": "cypress-multi-reporters",
-    "video": true,
-    "videosFolder": "cypress/videos",
+    "screenshotsFolder": "cypress/reports/screenshots",
+    "video": false,
+    "videosFolder": "cypress/reports/videos",
     "videoUploadOnPasses": false,
     "videoCompression": 40,
+    "recordVideos": "fail",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
         "mochawesomeReporterOptions": {

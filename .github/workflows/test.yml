@@ -12,10 +12,10 @@ jobs:
       
       - name: Generate Mochawesome Report
         if: always()
-        run: yarn report:init && yarn report:gen
+        run: yarn report:gen
 
       - uses: actions/upload-artifact@v2
         if: always()
         with:
-          name: cypress-edge-report
+          name: cypress-report
           path: cypress/reports

@@ -25,7 +25,11 @@ const titleToFileName = (title) => title.replace(/[:\/]/g, '');
 Cypress.on('test:after:run', (test, runnable) => {
     if (test.state === 'failed') {
         const filename = `${titleToFileName(runnable.parent.title)} -- ${titleToFileName(test.title)} (failed).png`;
-        addContext({ test }, `./screenshots/${Cypress.spec.name}/${filename}`);
-        addContext({ test }, `./videos/${Cypress.spec.name}.mp4`);
+        addContext({ test }, `../screenshots/${Cypress.spec.name}/${filename}`);
+        
+        // addContext({ test }, `../videos/${Cypress.spec.name}.mp4`);
+        // Cypress can only handle "full videos" right now we dont want this - but maybe in future
+        // see open related issue: https://github.com/cypress-io/cypress/issues/2522
     }
 });
+

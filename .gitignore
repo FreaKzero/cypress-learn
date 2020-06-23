@@ -119,3 +119,5 @@ cypress/reports/*
 cypress/mochareports/*
 cypress/screenshots/*
 cypress/videos/*
+
+.DS_Store
