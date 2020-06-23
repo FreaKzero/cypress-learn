@@ -1,6 +1,5 @@
 name: Edge
 on: push
-continue-on-error: true
 jobs:
   edge:
     runs-on: windows-latest
@@ -9,6 +8,7 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: edge
+          continue-on-error: true
       - uses: actions/upload-artifact@v2
         with:
           name: cypress-edge
@@ -21,6 +21,7 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
+          continue-on-error: true
       - uses: actions/upload-artifact@v2
         with:
           name: cypress-chrome
