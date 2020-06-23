@@ -1,5 +1,6 @@
 name: Edge
 on: push
+continue-on-error: true
 jobs:
   edge:
     runs-on: windows-latest
