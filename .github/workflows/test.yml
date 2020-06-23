@@ -8,7 +8,7 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: edge
-          continue-on-error: true
+          continue-on-error: spec
       - uses: actions/upload-artifact@v2
         with:
           name: cypress-edge
@@ -21,7 +21,7 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
-          continue-on-error: true
+          continue-on-error: spec
       - uses: actions/upload-artifact@v2
         with:
           name: cypress-chrome
