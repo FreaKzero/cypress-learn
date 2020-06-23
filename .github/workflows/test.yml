@@ -16,3 +16,9 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
+  
+  artifacts:
+    - uses: actions/upload-artifact@v2
+  with:
+    name: Cypress Results
+    path: /cypress
