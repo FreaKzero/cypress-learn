@@ -12,7 +12,7 @@ jobs:
       
       - name: Generate Mochawesome Report
         if: always()
-        run: yarn combine-reports && yarn run generate-report
+        run: mkdir cypress/reports/mochareports && yarn combine-reports && yarn run generate-report
 
       - uses: actions/upload-artifact@v2
         if: always()
