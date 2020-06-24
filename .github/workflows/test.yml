@@ -3,23 +3,14 @@ on: push
 jobs:
   Cypress:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
-      options: --user 1001
-
-    name: Testing Firefox & Chrome
+  
+    name: Testing Chrome
     steps:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v2
-        if: always()
         with:
           browser: chrome
       
-      - uses: cypress-io/github-action@v2
-        if: always()
-        with:
-          browser: firefox
-
       - name: Generate Mochawesome Report
         if: always()
         run: yarn report:gen
