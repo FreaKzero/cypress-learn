@@ -1,5 +1,19 @@
 /// <reference types="cypress" />
 
+context('Spencer', () => {
+  beforeEach(() => {
+    cy.visit('http://projects.freakzero.com/spencer/')
+  })
+
+  it('spawn window', () => {
+    cy.wait(2000);
+    cy.get('#spawn > li:nth-child(1) > a').click({force: true});
+    cy.wait(1000);
+    cy.get('#url').type('asdfasdfasdf{enter}');
+    cy.get('#stuff').should('be.visible');
+  });
+});
+
 context('Actions', () => {
   beforeEach(() => {
     cy.visit('http://freakzero.com')
@@ -17,3 +31,4 @@ context('Actions', () => {
     cy.get('#stuff').should('be.visible');
   })
 });
+
