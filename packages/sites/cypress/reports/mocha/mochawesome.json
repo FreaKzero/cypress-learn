@@ -1,0 +1,174 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-06-24T10:32:59.012Z",
+    "end": "2020-06-24T10:33:16.207Z",
+    "duration": 17195,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e5b0d03e-8f89-4caf-b0ab-7810593cb4e2",
+      "title": "",
+      "fullFile": "cypress/integration/examples/goto.spec.js",
+      "file": "cypress/integration/examples/goto.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "48dcb4a9-b839-415c-afab-d5752fd50d6d",
+          "title": "Spencer",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "spawn window",
+              "fullTitle": "Spencer spawn window",
+              "timedOut": null,
+              "duration": 9000,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"Browser\",\n    \"value\": \"Chrome (83.0.4103.106) (darwin)\"\n  },\n  {\n    \"title\": \"Logs:\",\n    \"value\": \"log: ┌───────────────────────────────────────────────────────────────────┐\\nlog: │            ___________ _____ _   _ _____  ___________             │\\nlog: │           /  ___| ___ \\\\  ___| \\\\ | /  __ \\\\|  ___| ___ \\\\            │\\nlog: │           \\\\ `--.| |_/ / |__ |  \\\\| | /  / |  |__| |_/ /            │\\nlog: │            `--. \\\\  __/|  __|| . ` | |    |  __||    /             │\\nlog: │           /\\\\__/ / |   | |___| |\\\\  | \\\\__/\\\\| |___| |\\\\ \\\\             │\\nlog: │           \\\\____/\\\\_|   \\\\____/\\\\_| \\\\_/\\\\____/\\\\____/\\\\_| \\\\_|            │\\nlog: │                                                                   │\\nlog: └───────────────────────────────────────────────────────────────────┘\\nlog:                               Spencer by: FreaKzero [Thomas Petrovic]\\nlog:                                    https://plus.google.com/+FreaKzero\\nlog:                                              http://www.FreaKzero.com\"\n  },\n  {\n    \"title\": \"Screenshot:\",\n    \"value\": \"../screenshots/examples/goto.spec.js/Spencer -- spawn window (failed).png\"\n  }\n]",
+              "code": "cy.wait(2000);\ncy.get('#spawn > li:nth-child(1) > a').click({\n  force: true\n});\ncy.wait(1000);\ncy.get('#url').type('asdfasdfasdf{enter}');\ncy.get('#stuff').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `#stuff`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `#stuff`, but never found it.\n    at Context.eval (http://projects.freakzero.com/__cypress/tests?p=cypress/integration/examples/goto.spec.js:16:22)",
+                "diff": null
+              },
+              "uuid": "d23bc47a-2a72-421b-a9d6-7b308b3d4711",
+              "parentUUID": "48dcb4a9-b839-415c-afab-d5752fd50d6d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d23bc47a-2a72-421b-a9d6-7b308b3d4711"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9000,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "af4eea0f-d4e9-4834-9c8a-ef471b34da41",
+          "title": "Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Opens Contactform",
+              "fullTitle": "Actions Opens Contactform",
+              "timedOut": null,
+              "duration": 1579,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"Browser\",\n  \"value\": \"Chrome (83.0.4103.106) (darwin)\"\n}",
+              "code": "cy.get('#opencontactform').click();\ncy.get('#contactform-name').should('be.visible');\ncy.get('#contactform-website').should('be.visible');\ncy.get('#contactform-email').should('be.visible');\ncy.get('#contactform-message').should('be.visible');",
+              "err": {},
+              "uuid": "9884daea-88fb-4570-88ff-c19b143c1d84",
+              "parentUUID": "af4eea0f-d4e9-4834-9c8a-ef471b34da41",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Error",
+              "fullTitle": "Actions Error",
+              "timedOut": null,
+              "duration": 5401,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"Browser\",\n    \"value\": \"Chrome (83.0.4103.106) (darwin)\"\n  },\n  {\n    \"title\": \"Logs:\",\n    \"value\": \"\"\n  },\n  {\n    \"title\": \"Screenshot:\",\n    \"value\": \"../screenshots/examples/goto.spec.js/Actions -- Error (failed).png\"\n  }\n]",
+              "code": "cy.get('#stuff').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `#stuff`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `#stuff`, but never found it.\n    at Context.eval (http://projects.freakzero.com/__cypress/tests?p=cypress/integration/examples/goto.spec.js:32:22)",
+                "diff": null
+              },
+              "uuid": "7099422b-9073-4b1c-976a-fe9ee7abe4fb",
+              "parentUUID": "af4eea0f-d4e9-4834-9c8a-ef471b34da41",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9884daea-88fb-4570-88ff-c19b143c1d84"
+          ],
+          "failures": [
+            "7099422b-9073-4b1c-976a-fe9ee7abe4fb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6980,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

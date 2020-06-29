@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v2
         with:
+          working-directory: packages/sites
           browser: chrome
       
       - name: Generate Mochawesome Report
