@@ -20,4 +20,4 @@ jobs:
         if: always()
         with:
           name: cypress-report
-          path: cypress/reports
+          path: packages/sites/cypress/reports
