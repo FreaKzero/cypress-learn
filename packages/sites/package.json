@@ -5,7 +5,7 @@
   "repository": "git@github.com:FreaKzero/cypress-learn.git",
   "license": "MIT",
   "dependencies": {
-    "cypress": "^4.7.0"
+    "rimraf": "^3.0.2"
   },
   "scripts": {
     "report:clean": "rm -rf cypress/reports/mochareports && rm cypress/reports/mocha/*.json",
@@ -16,6 +16,7 @@
     "cypress": "./node_modules/.bin/cypress open"
   },
   "devDependencies": {
+    "cypress": "^4.7.0",
     "cypress-multi-reporters": "^1.4.0",
     "mocha": "^8.0.1",
     "mochawesome": "^6.1.1",
