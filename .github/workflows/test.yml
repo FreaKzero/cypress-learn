@@ -18,6 +18,7 @@ jobs:
       
       - name: Generate Mochawesome Report
         if: always()
+        working-directory: packages/sites
         run: node ./mochawesome-report-generator.js
 
       - uses: actions/upload-artifact@v2
