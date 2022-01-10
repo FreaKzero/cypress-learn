@@ -1,28 +1,16 @@
-name: Testing
+name: pull request comment
 on:
-  pull_request:
+  issue_comment:                                     
+    types: [created, edited, deleted]
     branches:
       - master
 
 jobs:
-  Cypress:
-    runs-on: ubuntu-latest
-  
-    name: Testing Chrome
-    steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v2
-        with:
-          working-directory: packages/sites
-          browser: chrome
-      
-      - name: Generate Mochawesome Report
-        if: always()
-        working-directory: packages/sites
-        run: node ./mochawesome-report-generator.js
-
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: cypress-report
-          path: packages/sites/cypress/reports
+ job01:
+   if: contains(github.event.comment.html_url, '/pull/')
+   runs-on: ubuntu-latest
+   steps:
+     - name: say hello
+       if: contains(github.event.comment.body, '/deploy')
+       run: |
+         echo "Yep it works"
