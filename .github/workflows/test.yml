@@ -11,7 +11,12 @@ jobs:
      - name: Clone git repo
        if: contains(github.event.comment.body, '/deploy')
        uses: actions/checkout@v2
-
+     - name: Test repo
+       env:
+          BASE_BRANCH: ${{ github.base_ref }}
+       run: |
+        echo "Pull request's base branch is: ${BASE_BRANCH}"
+        
      - name: checkout
        env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
