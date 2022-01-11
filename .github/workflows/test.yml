@@ -10,11 +10,7 @@ jobs:
    steps:
      - name: Clone git repo
        if: contains(github.event.comment.body, '/deploy')
-       uses: actions/checkout@v2
-     - name: Test repo
-       run: |
-        echo "Pull request's base branch is: ${GITHUB_REF##*/}"
-        
+       uses: actions/checkout@v2   
      - name: checkout
        env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -25,3 +21,6 @@ jobs:
          PR_NUM=${PR_URL##*/}
          echo "Checking out from PR #$PR_NUM based on URL: $PR_URL"
          hub pr checkout $PR_NUM
+     - name: Test repo
+       run: |
+        echo "Pull request's base branch is: ${GITHUB_REF##*/}"
