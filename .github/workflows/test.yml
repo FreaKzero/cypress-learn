@@ -8,6 +8,10 @@ jobs:
    if: contains(github.event.comment.html_url, '/pull/')
    runs-on: ubuntu-latest
    steps:
+     - name: Clone git repo
+       if: contains(github.event.comment.body, '/deploy')
+       uses: actions/checkout@v2
+
      - name: say hello
        if: contains(github.event.comment.body, '/deploy')
        run: |
