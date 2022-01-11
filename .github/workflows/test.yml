@@ -12,6 +12,7 @@ jobs:
        if: contains(github.event.comment.body, '/deploy')
        uses: actions/checkout@v2   
      - name: checkout
+       id: checkout_step
        env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -21,6 +22,7 @@ jobs:
          PR_NUM=${PR_URL##*/}
          echo "Checking out from PR #$PR_NUM based on URL: $PR_URL"
          hub pr checkout $PR_NUM
+         echo "::set-output name=branch::$(git rev-parse --abbrev-ref HEAD)"
      - name: Test repo
        run: |
-        echo "Pull request's base branch is: ${GITHUB_REF##*/}"
+        echo "Pull request's base branch is: ${{steps.checkout_step.outputs.branch}}"
