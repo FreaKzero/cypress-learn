@@ -11,4 +11,7 @@ jobs:
      - name: say hello
        if: contains(github.event.comment.body, '/deploy')
        run: |
-         echo "this is ${{ github.event.pull_request.head.sha }}"
+         PR_URL="${{ github.event.issue.pull_request.url }}"
+         PR_NUM=${PR_URL##*/}
+         echo "Checking out from PR #$PR_NUM based on URL: $PR_URL"
+         hub pr checkout $PR_NUM
